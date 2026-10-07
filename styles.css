@@ -2004,11 +2004,41 @@ footer {
 /* ========== CARTAS SECRETAS - ELEGANTES Y ROMÁNTICAS ========== */
 .letters-unlock {
     display: flex;
+    flex-direction: column;
     gap: 1.5rem;
     justify-content: center;
     margin-bottom: 3rem;
-    flex-wrap: wrap;
+    align-items: center;
     animation: fadeInUp 0.8s ease;
+}
+
+.password-hints {
+    background: linear-gradient(135deg, rgba(255, 22, 84, 0.05) 0%, rgba(255, 107, 157, 0.05) 100%);
+    padding: 1.5rem 2.5rem;
+    border-radius: 15px;
+    border-left: 4px solid var(--primary);
+    max-width: 600px;
+    text-align: left;
+}
+
+.hint-text {
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    margin: 0 0 0.8rem 0;
+}
+
+.format-text {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.password-hints strong {
+    color: var(--primary);
 }
 
 #letterPassword {
@@ -2349,6 +2379,11 @@ canvas#confetti-canvas {
 
     .letters-unlock {
         flex-direction: column;
+    }
+
+    .password-hints {
+        width: 100%;
+        padding: 1rem 1.5rem;
     }
 
     #letterPassword {

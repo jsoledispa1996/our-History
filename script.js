@@ -12,13 +12,13 @@ function generateHeartBackground(container) {
     
     // Lista de todas las imágenes disponibles
     const images = [
-        'mayo_1.jpg', 'mayo_2.jpg', 'mayo_3.jpg', 'mayo_4.jpg',
-        'junio_1.jpg', 'agosto_1.jpg', 'agosto_2.jpg', 'agosto_3.jpg', 
-        'agosto_4.jpg', 'agosto_5.jpg', 'agosto_6.jpg', 'agosto_7.jpg',
-        'agosto_8.jpg', 'septiembre_1.jpg', 'septiembre_2.jpg', 'septiembre_3.jpg',
-        'septiembre_4.jpg', 'septiembre_5.jpg', 'septiembre_6.jpg', 'septiembre_7.jpg',
-        'septiembre_8.jpg', 'septiembre_9.jpg', 'octubre_1.jpg', 'mayo_5.jpg',
-        'mayo_6.jpg', 'mayo_7.jpg'
+        'mayo/mayo_1.jpg', 'mayo/mayo_2.jpg', 'mayo/mayo_3.jpg', 'mayo/mayo_4.jpg',
+        'junio/junio_1.jpg', 'agosto/agosto_1.jpg', 'agosto/agosto_2.jpg', 'agosto/agosto_3.jpg', 
+        'agosto/agosto_4.jpg', 'agosto/agosto_5.jpg', 'agosto/agosto_6.jpg', 'agosto/agosto_7.jpg',
+        'agosto/agosto_8.jpg', 'septiembre/septiembre_1.jpg', 'septiembre/septiembre_2.jpg', 'septiembre/septiembre_3.jpg',
+        'septiembre/septiembre_4.jpg', 'septiembre/septiembre_5.jpg', 'septiembre/septiembre_6.jpg', 'septiembre/septiembre_7.jpg',
+        'septiembre/septiembre_8.jpg', 'septiembre/septiembre_9.jpg', 'mayo/mayo_5.jpg',
+        'mayo/mayo_6.jpg', 'mayo/mayo_7.jpg'
     ];
     
     // DESIGN 2: MARCOS POLAROID FLOTANTES - Estilo vintage con marco blanco grande
@@ -227,6 +227,17 @@ const razones = [
     '🦅 Volaría contigo al infinito',
     '🎵 Eres mi melodía',
     '❤️ Te amo infinitamente',
+    '💕 Eres mi destino y mi libertad',
+    '🌸 Tu amor me hace completo',
+    '🔥 Me abrasas con tu pasión',
+    '✨ Eres magia pura en mi vida',
+    '🎀 Cada detalle tuyo me enamora',
+    '🌊 Tu amor es profundo e infinito',
+    '💎 Eres la joya que nunca podré perder',
+    '🎭 Tu amor es la mejor obra de arte',
+    '🌙 Bajo tus ojos descubrí el amor',
+    '⭐ Eres mi constelación favorita',
+    '❣️ Por siempre será tuyo mi corazón',
 ];
 
 function generateRazones() {
@@ -437,24 +448,25 @@ const mediaConfig = {
     mayo: {
         images: 7,
         videos: [
-            'videos/mayo/WhatsApp Video 2026-10-06 at 10.40.44.mp4',
-            'videos/mayo/WhatsApp Video 2026-10-06 at 10.40.45.mp4'
+            'videos/mayo/mayo_8.mp4',
+            'videos/mayo/mayo_9.mp4'
         ]
     },
     junio: {
         images: 1,
-        videos: ['videos/junio/WhatsApp Video 2026-10-06 at 10.41.30.mp4']
+        videos: ['videos/junio/junio_2.mp4']
     },
     agosto: {
-        images: 8,
-        videos: ['videos/agosto/WhatsApp Video 2026-10-06 at 11.14.24.mp4']
+        images: 16,
+        videos: ['videos/agosto/agosto_17.mp4']
     },
     septiembre: {
-        images: 9,
+        images: 16,
         videos: [
-            'videos/septiembre/WhatsApp Video 2026-10-06 at 11.18.29.mp4',
-            'videos/septiembre/WhatsApp Video 2026-10-06 at 11.18.31.mp4',
-            'videos/septiembre/WhatsApp Video 2026-10-06 at 11.18.32.mp4'
+            'videos/septiembre/septiembre_17.mp4',
+            'videos/septiembre/septiembre_18.mp4',
+            'videos/septiembre/septiembre_19.mp4',
+            'videos/septiembre/septiembre_20.mp4'
         ]
     },
     octubre: {
@@ -563,6 +575,23 @@ function initCounters() {
 
 // Cargar imágenes de la galería
 function loadGalleries() {
+    // Lista de todas las imágenes disponibles para selección aleatoria
+    const allImages = [
+        'mayo/mayo_1.jpg', 'mayo/mayo_2.jpg', 'mayo/mayo_3.jpg', 'mayo/mayo_4.jpg',
+        'mayo/mayo_5.jpg', 'mayo/mayo_6.jpg', 'mayo/mayo_7.jpg',
+        'junio/junio_1.jpg', 
+        'agosto/agosto_1.jpg', 'agosto/agosto_2.jpg', 'agosto/agosto_3.jpg', 
+        'agosto/agosto_4.jpg', 'agosto/agosto_5.jpg', 'agosto/agosto_6.jpg', 'agosto/agosto_7.jpg',
+        'agosto/agosto_8.jpg', 'agosto/agosto_9.jpg', 'agosto/agosto_10.jpg', 'agosto/agosto_11.jpg',
+        'agosto/agosto_12.jpg', 'agosto/agosto_13.jpg', 'agosto/agosto_14.jpg', 'agosto/agosto_15.jpg',
+        'agosto/agosto_16.jpg',
+        'septiembre/septiembre_1.jpg', 'septiembre/septiembre_2.jpg', 'septiembre/septiembre_3.jpg',
+        'septiembre/septiembre_4.jpg', 'septiembre/septiembre_5.jpg', 'septiembre/septiembre_6.jpg', 'septiembre/septiembre_7.jpg',
+        'septiembre/septiembre_8.jpg', 'septiembre/septiembre_9.jpg', 'septiembre/septiembre_10.jpg', 'septiembre/septiembre_11.jpg',
+        'septiembre/septiembre_12.jpg', 'septiembre/septiembre_13.jpg', 'septiembre/septiembre_14.jpg', 'septiembre/septiembre_15.jpg',
+        'septiembre/septiembre_16.jpg'
+    ];
+    
     Object.keys(mediaConfig).forEach(month => {
         const container = document.getElementById(`${month}-gallery`);
         if (!container) return;
@@ -574,7 +603,15 @@ function loadGalleries() {
             item.className = 'gallery-item';
             
             const img = document.createElement('img');
-            img.src = `images/${month}_${i}.jpg`;
+            
+            // Para octubre (o meses sin imágenes propias), usar imagen aleatoria
+            if (month === 'octubre' || imageCount === 0) {
+                const randomImage = allImages[Math.floor(Math.random() * allImages.length)];
+                img.src = `images/${randomImage}`;
+            } else {
+                img.src = `images/${month}/${month}_${i}.jpg`;
+            }
+            
             img.alt = `${month.charAt(0).toUpperCase() + month.slice(1)} - Momento ${i}`;
             img.loading = 'lazy';
             
@@ -708,6 +745,14 @@ function initScrollAnimations() {
     });
 }
 
+// Establecer imagen del carrusel (Foto especial de nosotros juntos)
+function setRandomCarruselImage() {
+    const carruselImg = document.getElementById('carruselFoto');
+    if (carruselImg) {
+        carruselImg.src = `images/nosotros_juntos.jpg`;
+    }
+}
+
 // Smooth scroll para navegación
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -749,6 +794,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // 🎉 GENERAR SECCIÓN DE RAZONES 🎉
         generateRazones();     // 100 Razones en esfera 3D
+        
+        // Establecer imagen aleatoria en el carrusel
+        setRandomCarruselImage();
         
         // Generar nuevos corazones cada 10 segundos
         setInterval(generateFloatingHearts, 10000);
