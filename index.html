@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Historia de Amor 💕</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Pétalos cayendo -->
+    <div class="petals-container" id="petalsContainer"></div>
+    
+    <!-- Luciérnagas volando -->
+    <div class="fireflies-container" id="firefliesContainer"></div>
+
+    <!-- Corazones flotantes animados -->
+    <div class="hearts-container" id="hearts"></div>
+
+    <!-- Pantalla de Carga - Corazón Gigante Perfecto -->
+    <div class="splash-screen" id="splashScreen">
+        <div class="splash-content">
+            <!-- Corazón Gigante SVG -->
+            <div class="heart-svg-wrapper">
+                <svg viewBox="0 0 400 420" width="500px" height="530px">
+                    <!-- Destellos/Brillo interno animado -->
+                    <circle class="heart-sparkle sparkle-1" cx="150" cy="180" r="8" fill="#ffb3d9" opacity="0.6"/>
+                    <circle class="heart-sparkle sparkle-2" cx="250" cy="160" r="6" fill="#ffb3d9" opacity="0.4"/>
+                    <circle class="heart-sparkle sparkle-3" cx="200" cy="280" r="7" fill="#ff9cb4" opacity="0.5"/>
+                    <circle class="heart-sparkle sparkle-4" cx="120" cy="260" r="5" fill="#ffb3d9" opacity="0.3"/>
+                    <circle class="heart-sparkle sparkle-5" cx="280" cy="240" r="6" fill="#ff9cb4" opacity="0.4"/>
+                    <circle class="heart-sparkle sparkle-6" cx="200" cy="220" r="8" fill="#fff0f5" opacity="0.7"/>
+                    
+                    <!-- Corazón principal GIGANTE -->
+                    <path class="heart-main" d="M200,400 C200,400 50,280 50,160 C50,90 90,40 140,40 C170,40 185,60 200,85 C215,60 230,40 260,40 C310,40 350,90 350,160 C350,280 200,400 200,400 Z"/>
+                </svg>
+            </div>
+            
+            <div class="days-counter">
+                <div class="days-number" id="splashDays">0</div>
+                <div class="days-text">Días Juntos</div>
+            </div>
+
+            <div class="splash-text">
+                <p>Nuestra Historia de Amor</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">💕 Nuestra Historia</div>
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#timeline">Nuestros Meses</a>
+                <a href="#futuro">El Futuro</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="fade-in">Nuestra Historia</h1>
+                <p class="subtitle fade-in-delay-1">8 de Mayo - Un viaje infinito</p>
+                <div class="counter fade-in-delay-2">
+                    <div class="counter-item">
+                        <span class="counter-number" id="days">0</span>
+                        <span class="counter-label">Días 🌟</span>
+                    </div>
+                    <div class="counter-item">
+                        <span class="counter-number" id="weeks">0</span>
+                        <span class="counter-label">Semanas 📅</span>
+                    </div>
+                    <div class="counter-item">
+                        <span class="counter-number" id="months">0</span>
+                        <span class="counter-label">Meses 💕</span>
+                    </div>
+                    <div class="counter-item">
+                        <span class="counter-number">∞</span>
+                        <span class="counter-label">Eternidad ∞</span>
+                    </div>
+                </div>
+                <a href="#timeline" class="cta-button">Ver Nuestros Momentos</a>
+            </div>
+        </div>
+        <div class="hero-background"></div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Momentos Especiales</h2>
+            <p class="section-subtitle">Cada mes ha sido una nueva aventura contigo</p>
+
+            <!-- Timeline Container -->
+            <div class="timeline">
+                <!-- Mayo -->
+                <div class="timeline-item fade-in-on-scroll">
+                    <div class="timeline-marker">
+                        <span class="month-badge">Mayo</span>
+                        <span class="date-badge">Día 1</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Nuestro Comienzo 🌸</h3>
+                        <p>8 de Mayo - El día que iniciamos esta hermosa historia. Cada momento desde entonces ha sido especial.</p>
+                        
+                        <div class="gallery">
+                            <div class="gallery-grid" id="mayo-gallery">
+                                <!-- Imágenes se cargan dinámicamente -->
+                            </div>
+                        </div>
+
+                        <div class="video-section">
+                            <h4>Momentos en Video</h4>
+                            <div class="video-grid" id="mayo-videos">
+                                <!-- Videos se cargan dinámicamente -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Junio -->
+                <div class="timeline-item fade-in-on-scroll">
+                    <div class="timeline-marker">
+                        <span class="month-badge">Junio</span>
+                        <span class="date-badge">+33 días</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Crecimiento del Amor 💚</h3>
+                        <p>Aprendiendo a conocernos, descubriendo nuevas formas de amarnos cada día.</p>
+                        
+                        <div class="gallery">
+                            <div class="gallery-grid" id="junio-gallery">
+                                <!-- Imágenes se cargan dinámicamente -->
+                            </div>
+                        </div>
+
+                        <div class="video-section">
+                            <h4>Momentos en Video</h4>
+                            <div class="video-grid" id="junio-videos">
+                                <!-- Videos se cargan dinámicamente -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Julio - Gap (Sin datos) -->
+                <div class="timeline-item gap-month fade-in-on-scroll">
+                    <div class="timeline-marker">
+                        <span class="month-badge">Julio</span>
+                        <span class="date-badge">Lejanía</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Meses de Añoranza 💭</h3>
+                        <p>No pudimos estar juntos este mes, pero cada día te echaba de menos. La distancia solo hizo más fuerte nuestro amor.</p>
+                    </div>
+                </div>
+
+                <!-- Agosto -->
+                <div class="timeline-item fade-in-on-scroll">
+                    <div class="timeline-marker">
+                        <span class="month-badge">Agosto</span>
+                        <span class="date-badge">+123 días</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Reencuentro Apasionado 🔥</h3>
+                        <p>Volvimos a estar juntos y fue como si nunca nos hubiéramos separado. Cada momento fue aún más precioso.</p>
+                        
+                        <div class="gallery">
+                            <div class="gallery-grid" id="agosto-gallery">
+                                <!-- Imágenes se cargan dinámicamente -->
+                            </div>
+                        </div>
+
+                        <div class="video-section">
+                            <h4>Momentos en Video</h4>
+                            <div class="video-grid" id="agosto-videos">
+                                <!-- Videos se cargan dinámicamente -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Septiembre -->
+                <div class="timeline-item fade-in-on-scroll">
+                    <div class="timeline-marker">
+                        <span class="month-badge">Septiembre</span>
+                        <span class="date-badge">+154 días</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Profundidad del Amor 💜</h3>
+                        <p>Descubrimos niveles más profundos de comprensión y conexión. Nuestro amor se fortaleció.</p>
+                        
+                        <div class="gallery">
+                            <div class="gallery-grid" id="septiembre-gallery">
+                                <!-- Imágenes se cargan dinámicamente -->
+                            </div>
+                        </div>
+
+                        <div class="video-section">
+                            <h4>Momentos en Video</h4>
+                            <div class="video-grid" id="septiembre-videos">
+                                <!-- Videos se cargan dinámicamente -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Octubre -->
+                <div class="timeline-item fade-in-on-scroll">
+                    <div class="timeline-marker">
+                        <span class="month-badge">Octubre</span>
+                        <span class="date-badge">Presente</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Nuestro Aniversario Especial 👑</h3>
+                        <p>5 meses de felicidad. Hoy celebramos todo lo que hemos vivido y soñamos con el futuro juntos.</p>
+                        
+                        <div class="gallery">
+                            <div class="gallery-grid" id="octubre-gallery">
+                                <!-- Imágenes se cargan dinámicamente -->
+                            </div>
+                        </div>
+
+                        <div class="video-section">
+                            <h4>Momentos en Video</h4>
+                            <div class="video-grid" id="octubre-videos">
+                                <!-- Videos se cargan dinámicamente -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Section -->
+    <section id="futuro" class="future-section">
+        <div class="container">
+            <h2 class="section-title">El Futuro Que Construiremos 🌟</h2>
+            <p class="section-subtitle">Lo mejor está por venir...</p>
+            
+            <div class="future-timeline">
+                <div class="future-month fade-in-on-scroll">
+                    <div class="future-marker">?</div>
+                    <h3>Noviembre</h3>
+                    <p>Nuevas sorpresas nos esperan...</p>
+                </div>
+                
+                <div class="future-month fade-in-on-scroll">
+                    <div class="future-marker">?</div>
+                    <h3>Diciembre</h3>
+                    <p>Momentos mágicos están por llegar...</p>
+                </div>
+                
+                <div class="future-month fade-in-on-scroll">
+                    <div class="future-marker">?</div>
+                    <h3>2027 y Más Allá</h3>
+                    <p>Una historia infinita de amor...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECCIÓN: 100 RAZONES (CARRUSEL PROFESIONAL) ============ -->
+    <section id="razones-section" class="romantic-section">
+        <div class="container">
+            <h2>100 Razones Por Las Que Te Amo ❤️</h2>
+            <p class="razones-subtitle">Desliza para descubrirlas todas 💕</p>
+            
+            <!-- CARRUSEL PRINCIPAL -->
+            <div class="carrusel-razones">
+                <!-- Foto a la izquierda -->
+                <div class="carrusel-foto">
+                    <img src="images/octubre_1.jpg" alt="Nosotros">
+                </div>
+                
+                <!-- Razón en el centro -->
+                <div class="carrusel-contenido">
+                    <div class="razon-actual-grande" id="razonActual">
+                        <!-- Se actualiza dinámicamente -->
+                    </div>
+                </div>
+                
+                <!-- Controles a la derecha -->
+                <div class="carrusel-controles">
+                    <button class="carrusel-btn prev" onclick="razonesPrev()" title="Anterior">
+                        ❮
+                    </button>
+                    <button class="carrusel-btn next" onclick="razonesNext()" title="Siguiente">
+                        ❯
+                    </button>
+                </div>
+            </div>
+            
+            <!-- INDICADOR Y ENTRADA RÁPIDA -->
+            <div class="carrusel-footer">
+                <div class="carrusel-indicador">
+                    <span id="razonNumero">1</span> / 100
+                </div>
+                
+                <input type="range" min="1" max="100" value="1" id="razonSlider" 
+                       class="carrusel-slider" onchange="razonesIr(this.value)">
+                
+                <div class="carrusel-progreso">
+                    <div class="carrusel-progreso-bar" id="progresoBar"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECCIÓN: CARTAS SECRETAS ============ -->
+    <section id="letters-section" class="romantic-section">
+        <div class="container">
+            <h2>Cartas de Amor 💌</h2>
+            <div class="letters-unlock">
+                <input type="password" id="letterPassword" placeholder="Ingresa la contraseña..." maxlength="10">
+                <button class="cartas-btn" onclick="unlockLetters()"><span>🔓 Desbloquear</span></button>
+            </div>
+            <div id="letters-container" class="letters-container" style="display:none;">
+                <!-- Se genera dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONFETI ============ -->
+    <canvas id="confetti-canvas" style="display:none;"></canvas>
+
+    <!-- Image Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" src="" alt="">
+        <div class="lightbox-caption"></div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <video class="modal-video" controls>
+                <source src="" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <footer>
+        <p>Con todo mi amor ❤️ - Creado para ti</p>
+        <p class="footer-date" id="footer-date"></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
